@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="A place to share verified information about calls and community response activity." />
+        <title>Call Statistics | Newton First Responders</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="page-statistics">
+        <div class="top-strip">
+            <div class="container top-inner">
+                <span><span class="live-dot"></span> SERVING OUR COMMUNITY 24/7</span
+                ><span>For emergencies, call <strong>911</strong></span>
+            </div>
+        </div>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand" aria-label="Newton First Responders home">
+                    <img src="newton-logo.png" alt="Newton First Responders emblem" /><span class="brand-copy">
+                        <strong>NEWTON</strong><small>FIRST RESPONDERS</small></span>
+                </a>
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="members.html">Our Members</a>
+                    <a class="active" aria-current="page" href="statistics.html">Call Statistics</a>
+                    <a href="equipment.html">Equipment</a>
+                    <a href="fundraisers.html">Fundraisers</a>
+                    <a href="guidelines.html">Operating Guidelines</a>
+                    <a class="nav-contact" href="contact.html">Contact Us <span aria-hidden="true">↗</span></a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="inner-hero">
+                <div class="container inner-hero-layout">
+                    <div>
+                        <div class="eyebrow"><span class="eyebrow-line"></span>COMMUNITY RESPONSE</div>
+                        <h1>Our call statistics.</h1>
+                    </div>
+                    <div class="inner-hero-mark"><img src="newton-logo.png" alt="Newton First Responders logo" /></div>
+                </div>
+            </section>
+            <section class="inner-section">
+                <div class="container">
+                    <div class="section-kicker">CALL ACTIVITY</div>
+                    <h2 class="inner-heading">
+                        Response at a glance.
+                    </h2>
+                    <p class="inner-intro">
+                        Explore Newton First Responders' historical
+                        emergency response statistics from 1998 through 2026.
+                    </p>
+                    <div class="statistics-summary">
+                        <div class="statistics-summary-card">
+                            <span>2026 REPORTED CALLS</span>
+                            <strong>77</strong>
+                            <p>Reported total for 2026</p>
+                        </div>
+                        <div class="statistics-summary-card">
+                            <span>2025 REPORTED CALLS</span>
+                            <strong>147</strong>
+                            <p>Reported total for 2025</p>
+                        </div>
+                        <div class="statistics-summary-card">
+                            <span>YEARS OF RECORDS</span>
+                            <strong>29</strong>
+                            <p>1998 through 2026</p>
+                        </div>
+                    </div>
+                    <div class="statistics-chart-section">
+                        <div class="statistics-section-heading">
+                            <span class="section-kicker">ANNUAL ACTIVITY</span>
+                            <h2>Yearly Call Totals</h2>
+                            <p>
+                                Historical annual call totals reported
+                                by Newton First Responders.
+                            </p>
+                        </div>
+                        <div class="statistics-chart-container">
+                            <canvas id="yearlyCallsChart"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="statistics-table-section">
+                        <div class="statistics-section-heading">
+                            <span class="section-kicker">HISTORICAL RECORDS</span>
+                            <h2>Detailed Call Statistics</h2>
+                            <p>
+                                A breakdown of reported response categories
+                                from 1998 through 2026. A dash indicates
+                                that no value was provided.
+                            </p>
+                        </div>
+                        <div class="statistics-table-wrapper">
+                            <table class="statistics-table" id="statisticsTable">
+                                <thead id="statisticsTableHead"></thead>
+                                <tbody id="statisticsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p class="statistics-note">
+                        Note: Statistics reflect the supplied historical
+                        records. The 2026 figures may represent a
+                        partial-year total and are not live data.
+                    </p>
+                </div>
+            </section>
+            <section class="inner-bottom-cta">
+                <div class="container inner-bottom-flex">
+                    <div>
+                        <span class="section-kicker">NEWTON FIRST RESPONDERS</span>
+                        <h2>Here for the community.</h2>
+                    </div>
+                    <a class="btn btn-white" href="Contact.html">Get in Touch ↗</a>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container footer-top">
+                <div class="footer-brand">
+                    <img src="newton-logo.png" alt="Newton First Responders logo" />
+                    <div><strong>NEWTON</strong><span>FIRST RESPONDERS</span></div>
+                    <p>Committed to serving our community with quality care, compassion, and dedication.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <a href="index.html">Home</a><a href="members.html">Our Members</a
+                    ><a href="equipment.html">Equipment</a><a href="statistics.html">Call Statistics</a>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <a href="fundraisers.html">Fundraisers</a
+                    ><a href="guidelines.html">Operating Guidelines</a><a href="Contact.html">Contact Us</a>
+                </div>
+                <div class="footer-links">
+                    <h3>Contact</h3>
+                    <a href="mailto:newtonrescue@lakefield.net">newtonrescue@lakefield.net</a>
+                    <p>For emergencies, dial 911.</p>
+                </div>
+            </div>
+            <div class="container footer-bottom">
+                <span>© 2026 Newton First Responders. Site originally created by MJK.</span
+                ><span>Original site last updated: September 17, 2025.</span>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        
+            const years = Array.from(
+                { length: 29 },
+                (_, i) => 1998 + i
+            );
+
+            const statistics = {
+                "Trauma - non-highway": [
+                    8,21,15,22,20,12,18,15,22,17,
+                    18,23,17,13,23,14,12,13,13,27,
+                    18,22,25,24,22,19,20,29,12
+                ],
+
+                "Trauma - MVC": [
+                    22,17,19,13,10,23,15,12,16,24,
+                    16,18,10,14,13,10,9,9,14,11,
+                    16,20,18,14,18,17,12,36,13
+                ],
+
+                "Medical": [
+                    30,36,40,51,37,40,31,38,29,43,
+                    46,49,49,44,37,57,44,61,63,75,
+                    66,63,55,66,67,55,52,61,37
+                ],
+
+                "Standby": [
+                    6,6,2,9,7,10,6,15,11,6,
+                    6,24,28,36,38,36,29,18,24,35,
+                    23,27,14,19,14,25,15,23,5
+                ],
+
+                "DOA": [
+                    1,1,1,1,1,1,2,1,4,2,
+                    2,1,3,1,2,1,4,4,1,2,
+                    null,1,2,null,8,4,4,1,4
+                ],
+
+                "No Patient": [
+                    2,6,2,4,3,4,5,2,0,0,
+                    3,1,2,null,4,null,2,2,9,null,
+                    null,null,null,3,2,3,null,4,2
+                ],
+
+                "Mutual Aid": [
+                    null,null,null,null,null,
+                    null,null,null,null,null,
+                    null,null,null,null,2,3,
+                    3,5,3,null,1,3,5,9,
+                    10,5,3,10,0
+                ],
+
+                "Kubota": [
+                    null,null,null,null,null,
+                    null,null,null,null,9,
+                    8,8,10,12,10,11,7,2,
+                    8,5,6,null,3,10,5,
+                    9,5,9,4
+                ],
+
+                "Total": [
+                    69,87,79,100,78,90,77,83,82,96,
+                    93,119,109,108,119,124,100,112,
+                    127,150,124,136,119,134,139,
+                    128,106,147,77
+                ],
+                
+                "Patients": [
+                    null, null, null, null, null,
+                    null, null, null, null, null,
+                    null, 119, 97, 84, 90, 113, 78, 
+                    100, 114, 128, 114, 127, 108, 
+                    135, 128, 114, 105, 134, 74
+                ]
+
+            };
+
+            // BUILD TABLE HEADER
+
+            const tableHead = document.getElementById(
+                "statisticsTableHead"
+            );
+
+            const headerRow = document.createElement("tr");
+
+            const categoryHeader = document.createElement("th");
+            categoryHeader.textContent = "Category";
+            headerRow.appendChild(categoryHeader);
+
+            years.forEach(year => {
+                const th = document.createElement("th");
+                th.textContent = year;
+                headerRow.appendChild(th);
+            });
+
+            tableHead.appendChild(headerRow);
+
+            // BUILD TABLE ROWS
+
+            const tableBody = document.getElementById(
+                "statisticsTableBody"
+            );
+
+            Object.entries(statistics).forEach(([category, values]) => {
+
+                const row = document.createElement("tr");
+
+                if (category === "Total") {
+                    row.classList.add("statistics-total-row");
+                }
+
+                const categoryCell = document.createElement("th");
+                categoryCell.scope = "row";
+                categoryCell.textContent = category;
+                row.appendChild(categoryCell);
+
+                values.forEach(value => {
+
+                    const cell = document.createElement("td");
+
+                    cell.textContent = value === null
+                        ? "—"
+                        : value;
+
+                    row.appendChild(cell);
+
+                });
+
+                tableBody.appendChild(row);
+
+            });
+
+            // YEARLY CALL CHART
+
+            const chartElement = document.getElementById(
+                "yearlyCallsChart"
+            );
+
+            if (chartElement && typeof Chart !== "undefined") {
+
+                new Chart(chartElement, {
+
+                    type: "bar",
+
+                    data: {
+                        labels: years,
+
+                        datasets: [{
+                            label: "Total Calls",
+                            data: statistics["Total"],
+                            backgroundColor: "#1953a4",
+                            hoverBackgroundColor: "#d93240",
+                            borderRadius: 4,
+                            maxBarThickness: 28
+                        }]
+                    },
+
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+
+                        scales: {
+                            x: {
+                                ticks: {
+                                    maxRotation: 90,
+                                    minRotation: 45
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            },
+
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0
+                                }
+                            }
+                        }
+                    }
+
+                });
+
+            }
+
+        });
+        </script>
+    </body>
+</html>
